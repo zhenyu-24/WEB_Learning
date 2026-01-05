@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 表单
+    1.作用：收集用户输入的数据，主要用于用户注册、登录、搜索等功能
+    2.基本语法：
+    <form action="处理脚本的URL" method="GET或POST">
+        <input type="text" name="username" placeholder="用户名">
+        <input type="password" name="password" placeholder="密码">
+        <input type="submit" value="提交">
+    </form>
+    3.属性
+        action：指定表单数据提交到的URL地址
+        method：指定数据提交的方法，常用的有GET和POST
+            GET：通过URL传递数据，数据量有限，不适合传递敏感信息
+            POST：通过请求体传递数据，数据量较大，适合传递敏感信息
+        target：指定表单提交后打开结果的方式，如在当前窗口打开、在新窗口打开等
+    4.type
+        text：单行文本输入框
+        password：密码输入框，输入内容以掩码形式显示
+        submit：提交按钮，点击后提交表单数据
+        reset：重置按钮，点击后清空表单内容
+        button：普通按钮，可通过JavaScript添加自定义功能
+        radio：单选按钮，允许用户从一组选项中选择一个
+        checkbox：复选框，允许用户从一组选项中选择多个
+        email：电子邮件输入框，浏览器会验证输入的格式是否正确
+        url：URL输入框，浏览器会验证输入的格式是否正确
+        number：数字输入框，只允许输入数字
+        date：日期选择器，允许用户选择日期
+        file：文件上传控件，允许用户上传文件
+    5.其他标签
+        label：为表单控件定义标签，提升可访问性
+        textarea：多行文本输入框
+        select：下拉列表
+        option：下拉列表中的选项
+    6.<button>标签也可以用来创建按钮，功能更强大，支持HTML内容和多种事件处理
+        <button type="button" onclick="alert('按钮被点击了')">点击我</button>
+    7.表单验证
+        HTML5引入了一些新的属性来简化表单验证，如required、pattern、min、max等
+        required：指定输入框为必填项
+        pattern：指定输入格式的正则表达式
+        min和max：指定数值输入框的最小值和最大值
+    8.表单布局
+        可以使用表格、CSS等方式对表单进行布局和样式设计，提升用户体验
+    -->
+        <h1>注册页面</h1>
+        <form action="http://www.baidu.com" method="POST">
+            <!-- for 属性通过控件的 id（这里是 "username"）关联到对应的输入框，提高可访问性（例如，点击标签可聚焦输入框）和用户体验。 -->
+            <label for="username">用户名:</label>
+            <!-- placeholder 属性提供输入框的提示信息;  required 属性表示该输入框为必填项 -->
+            <input type="text" id="username" name="username" placeholder="请输入用户名" required>
+            <br><br>
+            <label for="password">密码:</label>
+            <input type="password" id="password" name="password" placeholder="请输入密码" required>
+            <br><br>
+            <label for="age">年龄:</label>
+            <input type="number" id="age" name="age" min="18" max="100" placeholder="请输入年龄" required>
+            <br><br>
+            <label for="email">邮箱:</label>
+            <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="请输入邮箱" required>
+            <br><br>
+            <input type="submit" value="注册">
+            <input type="reset" value="重置">
+        </form>
+</body>
+</html>

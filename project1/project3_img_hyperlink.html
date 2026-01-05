@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <img src="path/to/image.jpg" title="鼠标悬停的提示信息" alt="图片不显示之后的提示信息"> -->
+    <h1>图片示例</h1>
+    <img src="img/img1.jpg" title="示例图片" alt="图片无法显示">
+    <!-- 超链接 -->
+    <!-- target="_self" 表示在当前窗口打开链接
+         target="_blank" 表示在新窗口打开链接
+         target="_parent" 表示在父框架中打开链接
+            target="_top" 表示在整个窗口中打开链接 -->
+    <a href="https://www.openai.com" title="访问 OpenAI 网站" target="_self">Click here to visit OpenAI</a>
+    <br>
+    <!-- 返回顶部 -->
+    <a href="#"> 返回顶部</a>
+    <br>
+    <!-- 跳转到其它页面 -->
+    <a href="project2_list.html">list 页面链接</a>
+    <!-- 锚点跳转:
+     点击区域：<a href="#锚点名字">文本/图片</a>
+     跳转区域：<div id="锚点名字"></div>
+     应用场景：小说目录、百度百科
+      -->
+     <br>
+    <a href="#section1">章节1</a>
+    <a href="#section2">章节2</a>
+    <a href="#section3">章节3</a>
+    <p>
+        <div id="section1">
+            <h2>章节1</h2>
+            <p>这是章节1的内容。</p>
+        </div>
+        <div id="section2">
+            <h2>章节2</h2>
+            <p>这是章节2的内容。</p>
+        </div>
+        <div id="section3">
+            <h2>章节3</h2>
+            <p>这是章节3的内容。</p>
+        </div>
+    </p>
+</body>
+</html>
