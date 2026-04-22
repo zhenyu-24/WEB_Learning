@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>iframe</title>
+</head>
+<body>
+    <!-- iframe标签
+      iframe标签用于在当前页面内显示其他页面的内容
+      src属性指定要显示的页面地址
+      frameborder属性指定是否显示边框
+      target属性指定iframe标签中的内容显示在哪个页面中
+      rel属性指定当前页面与iframe标签中的内容是否共享
+      rel属性值noopener表示当前页面与iframe标签中的内容不共享
+    -->
+    <iframe src="./project1_base.html" width="600" height="400"></iframe>
+
+    <br>
+
+    <iframe src="./project1_base.html" frameborder="0"></iframe>
+
+    <br>
+
+    <iframe src="https://www.runoob.com" name="iframe_a"></iframe>
+    <p><a href="https://www.runoob.com" target="iframe_a" rel="noopener">RUNOOB.COM</a></p>
+</body>
+</html>
