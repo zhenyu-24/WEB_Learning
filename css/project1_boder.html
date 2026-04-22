@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>菜鸟教程(runoob.com)</title> 
+<style> 
+#example1
+{
+    /* 设置边框：
+    宽度：单位px
+    样式：solid（实线）、dashed（虚线）、dotted（点线）等
+    颜色
+    */
+	border:2px solid #a1a1a1;
+    /* 圆角边框：圆角半径 单位px */
+    border-radius:25px;
+    /* 内边距：上下 左右 */
+	padding:10px 40px;
+    /* 外边距：上下 左右 */  
+    margin: 10px; 
+	background:#dddddd;
+	width:300px;
+}
+
+#example2 {
+  border: 2px solid red;
+  /* 左上角 + 右下角; 右上角 + 左下角 */
+  border-radius: 50px 20px;
+  padding: 10px;
+}
+
+div
+{
+	width:300px;
+	height:100px;
+	background-color:yellow;
+    /*设置阴影  水平偏移 垂直偏移 模糊半径 阴影颜色;*/
+	box-shadow: 10px 10px 5px #888888;
+}
+</style>
+</head>
+<body>
+
+<div id="example1">
+  <p>border-radius 属性允许您为元素添加圆角边框！</p>
+</div>
+
+<br><br>
+
+<div id="example2">
+  <p>如果设置了两个值，第一个用于左上角和右下角，第二个用于右上角和左下角。</p>
+</div>
+
+</body>
+</html>
