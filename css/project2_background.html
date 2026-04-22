@@ -5,9 +5,30 @@
 <title>菜鸟教程(runoob.com)</title> 
 <style>
 #example1 {
-    background-image: url(images/img1.jpg);
-    background-position: center;
+    background-image: url(images/img2.jpg);
+    /* 背景位置： 设置背景图片的起始位置
+    left top：左上角
+    left center：左中
+    left bottom：左下角
+    center：中间
+    right top：右上角
+    right center：右中
+    right bottom：右下角
+    */
+    background-position: left top;
+    /* 背景重复方式
+    no-repeat：不重复
+    repeat-x：水平重复
+    repeat-y：垂直重复
+    repeat：水平垂直重复
+     */
     background-repeat: no-repeat;
+    /* 背景图片大小
+    cover：保持图片的宽高比，缩放图片以完全覆盖背景区域。图片可能会被裁剪以适应背景区域。
+    contain：保持图片的宽高比，缩放图片以包含背景区域。图片可能会留有空白。
+    80px 60px: 固定图片大小为 80px * 60px。
+    */
+    background-size: cover;
     padding: 15px;
 }
 </style>
