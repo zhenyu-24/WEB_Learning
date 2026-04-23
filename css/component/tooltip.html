@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>四方向 Tooltip - 完整修复版</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+            flex-wrap: wrap;
+            padding: 80px 40px;
+        }
+
+        /* 通用 tooltip 容器样式 */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            padding: 12px 24px;
+            background: white;
+            color: #333;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+
+        .tooltip:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+
+        /* ==================== 上方提示 ==================== */
+        .tooltip-top::before {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-bottom-color: #333;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+            margin-bottom: 0;
+        }
+
+        .tooltip-top::after {
+            content: attr(data-tip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            white-space: nowrap;
+            margin-bottom: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+        }
+
+        .tooltip-top:hover::before,
+        .tooltip-top:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .tooltip-top:hover::after {
+            transform: translateX(-50%) translateY(-4px);
+        }
+
+        .tooltip-top:hover::before {
+            transform: translateX(-50%) translateY(4px);
+        }
+
+        /* ==================== 下方提示 ==================== */
+        .tooltip-bottom::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: #333;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+            margin-top: 0;
+        }
+
+        .tooltip-bottom::after {
+            content: attr(data-tip);
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            white-space: nowrap;
+            margin-top: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+        }
+
+        .tooltip-bottom:hover::before,
+        .tooltip-bottom:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .tooltip-bottom:hover::after {
+            transform: translateX(-50%) translateY(4px);
+        }
+
+        .tooltip-bottom:hover::before {
+            transform: translateX(-50%) translateY(-4px);
+        }
+
+        /* ==================== 左侧提示 ==================== */
+        .tooltip-left::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 100%;
+            transform: translateY(-50%);
+            border: 6px solid transparent;
+            border-right-color: #333;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+            margin-right: 0;
+        }
+
+        .tooltip-left::after {
+            content: attr(data-tip);
+            position: absolute;
+            top: 50%;
+            right: 100%;
+            transform: translateY(-50%);
+            background: #333;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            white-space: nowrap;
+            margin-right: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+        }
+
+        .tooltip-left:hover::before,
+        .tooltip-left:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .tooltip-left:hover::after {
+            transform: translateY(-50%) translateX(-4px);
+        }
+
+        .tooltip-left:hover::before {
+            transform: translateY(-50%) translateX(4px);
+        }
+
+        /* ==================== 右侧提示 ==================== */
+        .tooltip-right::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            transform: translateY(-50%);
+            border: 6px solid transparent;
+            border-left-color: #333;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+            margin-left: 0;
+        }
+
+        .tooltip-right::after {
+            content: attr(data-tip);
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            transform: translateY(-50%);
+            background: #333;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            white-space: nowrap;
+            margin-left: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+        }
+
+        .tooltip-right:hover::before,
+        .tooltip-right:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .tooltip-right:hover::after {
+            transform: translateY(-50%) translateX(4px);
+        }
+
+        .tooltip-right:hover::before {
+            transform: translateY(-50%) translateX(-4px);
+        }
+
+        /* 卡片容器样式 */
+        .demo-container {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 30px 40px;
+            border-radius: 16px;
+            backdrop-filter: blur(4px);
+        }
+
+        .direction-label {
+            margin-top: 30px;
+            color: white;
+            font-size: 14px;
+            opacity: 0.8;
+            letter-spacing: 1px;
+        }
+
+        /* 响应式：小屏幕时换行 */
+        @media (max-width: 768px) {
+            body {
+                gap: 30px;
+                padding: 40px 20px;
+            }
+            .demo-container {
+                padding: 20px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 上方提示 -->
+    <div class="demo-container">
+        <div class="tooltip tooltip-top" data-tip="✨ 我是上方的提示">
+            上方提示
+        </div>
+        <div class="direction-label">
+            ⬆️ 鼠标悬停查看上方提示 ⬆️
+        </div>
+    </div>
+
+    <!-- 下方提示 -->
+    <div class="demo-container">
+        <div class="tooltip tooltip-bottom" data-tip="✨ 我是下方的提示">
+            下方提示
+        </div>
+        <div class="direction-label">
+            ⬇️ 鼠标悬停查看下方提示 ⬇️
+        </div>
+    </div>
+
+    <!-- 左侧提示 -->
+    <div class="demo-container">
+        <div class="tooltip tooltip-left" data-tip="✨ 我是左侧的提示">
+            左侧提示
+        </div>
+        <div class="direction-label">
+            ⬅️ 鼠标悬停查看左侧提示 ⬅️
+        </div>
+    </div>
+
+    <!-- 右侧提示 -->
+    <div class="demo-container">
+        <div class="tooltip tooltip-right" data-tip="✨ 我是右侧的提示">
+            右侧提示
+        </div>
+        <div class="direction-label">
+            ➡️ 鼠标悬停查看右侧提示 ➡️
+        </div>
+    </div>
+</body>
+</html>

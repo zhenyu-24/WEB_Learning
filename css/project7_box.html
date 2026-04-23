@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+    Margin(外边距) - 清除边框外的区域，外边距是透明的。
+    Border(边框) - 围绕在内边距和内容外的边框。
+    Padding(内边距) - 清除内容周围的区域，内边距是透明的。
+    Content(内容) - 盒子的内容，显示文本和图像。
+
+    属性	描述
+    border	简写属性，用于把针对四个边的属性设置在一个声明。
+    border-style	用于设置元素所有边框的样式，或者单独地为各边设置边框样式。
+    border-width	简写属性，用于为元素的所有边框设置宽度，或者单独地为各边边框设置宽度。
+    border-color	简写属性，设置元素的所有边框中可见部分的颜色，或为 4 个边分别设置颜色。
+    border-bottom	简写属性，用于把下边框的所有属性设置到一个声明中。
+    border-bottom-color	设置元素的下边框的颜色。
+    border-bottom-style	设置元素的下边框的样式。
+    border-bottom-width	设置元素的下边框的宽度。
+    border-left	简写属性，用于把左边框的所有属性设置到一个声明中。
+    border-left-color	设置元素的左边框的颜色。
+    border-left-style	设置元素的左边框的样式。
+    border-left-width	设置元素的左边框的宽度。
+    border-right	简写属性，用于把右边框的所有属性设置到一个声明中。
+    border-right-color	设置元素的右边框的颜色。
+    border-right-style	设置元素的右边框的样式。
+    border-right-width	设置元素的右边框的宽度。
+    border-top	简写属性，用于把上边框的所有属性设置到一个声明中。
+    border-top-color	设置元素的上边框的颜色。
+    border-top-style	设置元素的上边框的样式。
+    border-top-width	设置元素的上边框的宽度。
+    border-radius	设置圆角的边框。
+
+
+    属性	描述	可选值	默认值
+    outline	简写属性，一次性设置所有轮廓属性	width style color	medium none invert
+    outline-color	设置轮廓颜色	颜色值、invert	invert（反色）
+    outline-style	设置轮廓样式	solid、double	none
+    outline-width	设置轮廓宽度	thin、medium、thick、像素值	medium
+    outline-offset	设置轮廓与元素边缘的距离	像素值、百分比	0
+    -->
+    <style>
+    div.ex
+    {
+    width:220px;    
+    padding:10px;
+    border:5px solid gray;
+    margin:0px;
+    }
+    </style>
+    <!-- 220px + 10px + 10px + 5px + 5px = 250px -->
+</head>
+<body>
+    <img src="./images/img1.jpg" width="250" height="250" />
+
+    <div class="ex">
+    上面的图片是250 px宽。
+    这个元素的总宽度也是250 px。
+    </div>
+</body>
+</html>
