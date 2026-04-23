@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+    水平居中（6种）
+    方法	代码	适用场景
+    margin: 0 auto	margin: 0 auto; width: 200px;	块级元素有宽度
+    text-align: center	text-align: center;	父容器内的行内/行内块元素
+    Flex	display: flex; justify-content: center;	现代布局，最推荐
+    Grid	display: grid; justify-items: center;	Grid 布局
+    绝对定位 + transform	left: 50%; transform: translateX(-50%);	宽高未知
+    绝对定位 + 计算	left: 50%; margin-left: -100px; width: 200px;	宽高已知
+
+    垂直居中（5种）
+    方法	代码	适用场景
+    Flex	display: flex; align-items: center;	现代布局，最推荐
+    Grid	display: grid; align-items: center;	Grid 布局
+    绝对定位 + transform	top: 50%; transform: translateY(-50%);	宽高未知
+    绝对定位 + 计算	top: 50%; margin-top: -100px; height: 200px;	宽高已知
+    line-height	line-height: 200px;	单行文本垂直居中
+
+    水平垂直同时居中（5种）
+    方法	代码	适用场景
+    Flex	display: flex; justify-content: center; align-items: center;	⭐ 最推荐
+    Grid	display: grid; place-items: center;	最简洁
+    绝对定位 + transform	top: 50%; left: 50%; transform: translate(-50%, -50%);	宽高未知
+    绝对定位 + 计算	top: 50%; left: 50%; margin: -100px 0 0 -100px; width: 200px; height: 200px;	宽高已知
+    表格布局	display: table-cell; vertical-align: middle; text-align: center;	旧方法
+    -->
+    <style>
+    .right {
+        position: absolute;
+        right: 0px;
+        width: 300px;
+        border: 3px solid #73AD21;
+        padding: 10px;
+    }
+    </style>
+</head>
+<body>
+    <h2>右对齐</h2>
+    <p>以下实例演示了如何使用 position 来实现右对齐:</p>
+
+    <div class="right">
+    <p>菜鸟教程 -- 学的不仅是技术，更是梦想！！</p>
+    </div>
+    
+</body>
+</html>

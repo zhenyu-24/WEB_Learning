@@ -23,7 +23,10 @@
             padding: 80px 40px;
         }
 
-        /* 通用 tooltip 容器样式 */
+        /* 通用 tooltip 容器样式
+        position: relative; 便于提示框绝对位置定位
+        display: inline-block; 显示为内联元素，可宽高/边距
+        */
         .tooltip {
             position: relative;
             display: inline-block;
@@ -38,7 +41,8 @@
             transition: all 0.3s ease;
             z-index: 1;
         }
-
+        
+        /* 鼠标移动上去后显示提示框 */
         .tooltip:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.25);

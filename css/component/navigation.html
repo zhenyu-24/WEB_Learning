@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    body {margin: 0;}
+    /* 导航栏
+    list-style-type: 取消列表项标记
+    overflow: auto; 允许内容溢出导航栏
+    position: fixed;侧边栏相当于整个页面width、height正常生效
+    width: 25%; 当为侧边栏时，宽度为25%且height: 100%
+    大屏（>900px）
+    */
+    ul.sidenav {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 25%;
+        height: 100%;
+        background-color: #f1f1f1;
+        position: fixed;
+        overflow: auto;
+    }    
+    /* 导航栏
+    display: block; 变为块级元素，整个可以点击
+    */
+    ul.sidenav li a {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+    }
+    /* 激活 */
+    ul.sidenav li a.active {
+        background-color: #4CAF50;
+        color: white;
+    }
+    /* 悬浮 */
+    ul.sidenav li a:hover:not(.active) {
+        background-color: #555;
+        color: white;
+    }
+
+    div.content {
+        margin-left: 25%;
+        padding: 1px 16px;
+        height: 1000px;
+    }
+
+    /*@media screen: 根据媒体查询条件来改变样式*/
+
+    /* 横向导航栏
+    width: 100%; 占满整行
+    float: left; 浮动, 默认左浮动, 否则每个都占一行
+    小屏（≤900px），否则fixed将占满页面
+    */
+    @media screen and (max-width: 900px) {
+        ul.sidenav {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+        ul.sidenav li a {
+            float: left;
+            padding: 15px;
+        }
+        div.content {margin-left: 0;}
+    }
+
+    @media screen and (max-width: 400px) {
+        ul.sidenav li a {
+            text-align: center;
+            float: none;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <ul class="sidenav">
+    <li><a class="active" href="#home">主页</a></li>
+    <li><a href="#news">新闻</a></li>
+    <li><a href="#contact">联系</a></li>
+    <li><a href="#about">关于</a></li>
+    </ul>
+
+    <div class="content">
+    <h2>响应式边栏导航实例</h2>
+    <p>该实例在屏幕宽度小于 900px 时导航栏为顶部水平导航栏，如果大于 900px 导航栏会在左边，且是固定的。</p>
+    <p>如果屏幕宽度小于 400px 会变为垂直导航栏。</p>
+    <h3>重置浏览器窗口大小，查看效果。</h3>
+    </div>
+
+</body>
+</html>
