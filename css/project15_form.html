@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- 
+  分类	type 值	主要用途
+  文本	text, password, email, tel, url, search	基本信息输入
+  数值	number, range	数字、滑块
+  日期	date, time, datetime-local, month, week	日期时间选择
+  选择	checkbox, radio	多项/单项选择
+  按钮	submit, reset, button, image	表单操作
+  其他	file, hidden, color	文件上传、隐藏字段、颜色
+  -->
+  <!--输入框(input) 聚焦
+  input[type=text]:focus {
+    background-color: lightblue;
+  } 
+  -->
+  <!-- 输入框(input) 图标
+   input[type=text] {
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding-left: 40px;
+  }
+  -->
+  <!-- 文本框（textarea）样式
+  使用 resize 属性来禁用文本框可以重置大小的功能（一般拖动右下角可以重置大小）。
+  textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+  }
+  -->
+  <!-- 按钮样式
+  cursor: pointer;改变鼠标指针的样式
+  input[type=button], input[type=submit], input[type=reset] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  } 
+  -->
+  <style>
+  * {
+    box-sizing: border-box;
+  }
+
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+
+  /* 清除浮动 */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* 响应式布局 layout - 在屏幕宽度小于 600px 时， 设置为上下堆叠元素 */
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+  </style>
+</head>
+<body>
+
+  <h2>响应式表单</h2>
+  <p>响应式表带可以根据浏览器窗口的大小重新布局各个元素，我们可以通过重置浏览器窗口大小来查看效果：</p>
+
+  <div class="container">
+    <form action="/action_page.php">
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">First Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Last Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="country">Country</label>
+      </div>
+      <div class="col-75">
+        <select id="country" name="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="subject">Subject</label>
+      </div>
+      <div class="col-75">
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+    </form>
+  </div>
+
+</body>
+</html>

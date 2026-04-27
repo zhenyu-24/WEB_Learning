@@ -398,5 +398,81 @@ h2 ~ p {
 <p>我也会变绿</p>
 ```
 
+## 属性选择器
 
+### 1、[attribute]
 
+选择带有指定属性的所有元素（无论属性值是什么）。
+
+```
+/* 选择所有具有 `type` 属性的元素 */
+[type] {
+  border: 1px solid red;
+}
+```
+
+### 2、[attribute="value"]
+
+选择具有指定属性和值完全匹配的元素。
+
+```
+/* 选择所有 `type` 属性等于 `text` 的元素 */
+[type="text"] {
+  background-color: yellow;
+}
+```
+
+### 3、[attribute~="value"]
+
+选择属性值中包含指定词（用空格分隔的词列表之一）的元素。
+
+```
+/* 选择属性值中包含 `button` 的元素 */
+[class~="button"] {
+  font-weight: bold;
+}
+```
+
+### 4、[attribute|="value"]
+
+选择具有指定值或者以指定值开头并紧跟着连字符 - 的属性值的元素，常用于语言代码。
+
+```
+/* 选择所有 `lang` 属性是 `en` 或者以 `en-` 开头的元素 */
+[lang|="en"] {
+  color: green;
+}
+```
+
+### 5、[attribute^="value"]
+
+选择属性值以指定值开头的元素。
+
+```
+/* 选择所有 `href` 属性以 `https` 开头的链接 */
+[href^="https"] {
+  text-decoration: none;
+}
+```
+
+### 6、[attribute$="value"]
+
+选择属性值以指定值结尾的元素。
+
+```
+/* 选择所有 src 属性以 .jpg 结尾的图片 */
+[src$=".jpg"] {
+  border: 2px solid blue;
+}
+```
+
+### 7、[attribute*="value"]
+
+选择属性值中包含指定值的元素。
+
+```
+/* 选择所有 `title` 属性中包含 `tutorial` 的元素 */
+[title*="tutorial"] {
+  font-style: italic;
+}
+```

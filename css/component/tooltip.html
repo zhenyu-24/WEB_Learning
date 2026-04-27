@@ -42,58 +42,59 @@
             z-index: 1;
         }
         
-        /* 鼠标移动上去后显示提示框 */
         .tooltip:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.25);
         }
 
         /* ==================== 上方提示 ==================== */
+        /* 箭头 */
         .tooltip-top::before {
-            content: '';
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
+            content: '';    /* 必须有，否则不显示 */
+            position: absolute; /* 相对于 .tooltip 定位 */
+            bottom: 100%;   /* 紧贴在按钮顶部上方 */
+            /* 水平居中 */
+            left: 50%;     
             transform: translateX(-50%);
-            border: 6px solid transparent;
-            border-bottom-color: #333;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.2s ease;
-            margin-bottom: 0;
+            /* 三角形 */
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;  /* 全部透明后续加颜色决定方向 */
+            border-bottom-color: #333;  /* 决定三角形的颜色和方向 */
+            /* 消失 */
+            opacity: 0; /* 不透明度设置为 0，去掉消失不同步 */
+            visibility: hidden; /* 默认不可见 */
+            transition: all 0.2s ease;  /* 花 0.2秒 的时间平滑地变过去 透明度和可见性过渡 */
         }
-
+        /* 内容 */
         .tooltip-top::after {
             content: attr(data-tip);
             position: absolute;
             bottom: 100%;
+            /* 水平居中 */
             left: 50%;
             transform: translateX(-50%);
+            /* 文字背景 */
             background: #333;
             color: white;
             padding: 6px 12px;
             border-radius: 6px;
             font-size: 12px;
-            white-space: nowrap;
+            white-space: nowrap;    /* 文字不换行 */
+            /* 外边距 与箭头保持间距防止重合 */
             margin-bottom: 10px;
+            /* 消失动画 */
             opacity: 0;
             visibility: hidden;
             transition: all 0.2s ease;
         }
 
-        .tooltip-top:hover::before,
-        .tooltip-top:hover::after {
+        .tooltip-top:hover::before, .tooltip-top:hover::after {
             opacity: 1;
             visibility: visible;
         }
 
-        .tooltip-top:hover::after {
-            transform: translateX(-50%) translateY(-4px);
-        }
-
-        .tooltip-top:hover::before {
-            transform: translateX(-50%) translateY(4px);
-        }
+        
 
         /* ==================== 下方提示 ==================== */
         .tooltip-bottom::before {
@@ -132,14 +133,6 @@
         .tooltip-bottom:hover::after {
             opacity: 1;
             visibility: visible;
-        }
-
-        .tooltip-bottom:hover::after {
-            transform: translateX(-50%) translateY(4px);
-        }
-
-        .tooltip-bottom:hover::before {
-            transform: translateX(-50%) translateY(-4px);
         }
 
         /* ==================== 左侧提示 ==================== */
@@ -181,14 +174,6 @@
             visibility: visible;
         }
 
-        .tooltip-left:hover::after {
-            transform: translateY(-50%) translateX(-4px);
-        }
-
-        .tooltip-left:hover::before {
-            transform: translateY(-50%) translateX(4px);
-        }
-
         /* ==================== 右侧提示 ==================== */
         .tooltip-right::before {
             content: '';
@@ -228,21 +213,12 @@
             visibility: visible;
         }
 
-        .tooltip-right:hover::after {
-            transform: translateY(-50%) translateX(4px);
-        }
-
-        .tooltip-right:hover::before {
-            transform: translateY(-50%) translateX(-4px);
-        }
-
         /* 卡片容器样式 */
         .demo-container {
             text-align: center;
             background: rgba(255,255,255,0.1);
             padding: 30px 40px;
             border-radius: 16px;
-            backdrop-filter: blur(4px);
         }
 
         .direction-label {

@@ -5,16 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- 
-    水平居中（6种）
+    水平居中
     方法	代码	适用场景
     margin: 0 auto	margin: 0 auto; width: 200px;	块级元素有宽度
     text-align: center	text-align: center;	父容器内的行内/行内块元素
     Flex	display: flex; justify-content: center;	现代布局，最推荐
     Grid	display: grid; justify-items: center;	Grid 布局
-    绝对定位 + transform	left: 50%; transform: translateX(-50%);	宽高未知
-    绝对定位 + 计算	left: 50%; margin-left: -100px; width: 200px;	宽高已知
+    绝对定位 + transform + left	left: 50%; transform: translateX(-50%);	宽高未知
 
-    垂直居中（5种）
+    垂直居中
     方法	代码	适用场景
     Flex	display: flex; align-items: center;	现代布局，最推荐
     Grid	display: grid; align-items: center;	Grid 布局
@@ -22,7 +21,7 @@
     绝对定位 + 计算	top: 50%; margin-top: -100px; height: 200px;	宽高已知
     line-height	line-height: 200px;	单行文本垂直居中
 
-    水平垂直同时居中（5种）
+    水平垂直同时居中
     方法	代码	适用场景
     Flex	display: flex; justify-content: center; align-items: center;	⭐ 最推荐
     Grid	display: grid; place-items: center;	最简洁
