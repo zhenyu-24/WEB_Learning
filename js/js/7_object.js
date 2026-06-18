@@ -1,5 +1,5 @@
 // 对象字面量
-var person = {
+let person = {
     name: "Alice",
     age: 30,
     isEmployed: true,
@@ -13,9 +13,11 @@ var person = {
     }   
 };
 
-// 访问对象属性
+// 2种方法访问对象属性
 console.log(person.name); // 输出 'Alice'
 console.log(person["age"]); // 输出 30
 console.log(person.container.type); // 输出 'box'
+
+// 访问对象方法
 person.greet(); // 输出 'Hello, my name is Alice'
 
