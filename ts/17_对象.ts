@@ -1,0 +1,13 @@
+/* TypeScript 对象
+对象是包含一组键值对的实例。 值可以是标量、函数、数组、对象等，如下实例：
+
+var object_name = { 
+    key1: "value1", // 标量
+    key2: "value",  
+    key3: function() {
+        // 函数
+    }, 
+    key4:["content1", "content2"] //集合
+}
+以上对象包含了标量，函数，集合(数组或元组)。
+*/ 

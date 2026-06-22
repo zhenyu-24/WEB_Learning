@@ -33,3 +33,32 @@ var employee:IPerson = {
 console.log("Employee  对象 ") 
 console.log(employee.firstName) 
 console.log(employee.lastName)
+
+/* 接口继承
+接口继承就是说接口可以通过其他接口来扩展自己。
+
+Typescript 允许接口继承多个接口。
+
+继承使用关键字 extends。
+
+单接口继承语法格式：
+
+Child_interface_name extends super_interface_name
+多接口继承语法格式：
+
+Child_interface_name extends super_interface1_name, super_interface2_name,…,super_interfaceN_name
+*/ 
+
+interface Person { 
+   age:number 
+} 
+ 
+interface Musician extends Person { 
+   instrument:string 
+} 
+ 
+var drummer = <Musician>{}; 
+drummer.age = 27 
+drummer.instrument = "Drums" 
+console.log("年龄:  "+drummer.age)
+console.log("喜欢的乐器:  "+drummer.instrument)
